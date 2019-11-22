@@ -30,6 +30,22 @@ def randomPurple():
     purple = (randint(100,255),0,randint(100,255))
     return purple
 
+def drawCircle(centerX,centerY,radius,color):
+    #By rishil patel
+    r.penup()
+    r.goto(centerX,centerY)
+    r.setheading(0)
+    r.forward(radius)
+    r.left(90)
+    r.fillcolor(color)
+    r.begin_fill()
+    r.pendown()
+    r.pencolor("black")
+    for i in range(360):
+        r.forward(2*math.pi*(radius/360))
+        r.left(1)
+    r.end_fill()   
+
 def createRipple():
     #By rishil Patel
     r.setheading(270) #face south
