@@ -136,10 +136,140 @@ def drawOneFish():
     r.forward(30*number)
     r.end_fill()
     r.right(60)
+    
+    
+def drawBird():
+  #by Shayan Manoharan
+  r.penup()
+  r.fillcolor(0,0,0)
+  r.goto(0,300)
+  r.begin_fill()
+  r.pencolor("black")
+  r.pendown()
+  r.setheading(0)
+  for i in range(30):
+    r.forward(1)
+    r.right(2)
+  r.setheading(45)
+  for i in range(30):
+    r.forward(1)
+    r.right(2)
+  r.left(170)
+  for i in range(30):
+    r.forward(1)
+    r.left(2)
+  r.setheading(135)
+  for i in range(30):
+    r.forward(1)
+    r.left(2)
+  r.penup()
+  r.end_fill()
+  
+  
+
+def drawStickPerson():
+  #by sangeev p
+  r.penup()
+  r.setheading(0)
+  r.goto(-50,230)
+  r.pencolor("black")
+  r.fillcolor(0,0,0)
+  r.begin_fill()
+  r.pendown()
+  r.circle(10)
+  r.end_fill()
+  r.right(90)
+  r.forward(5)
+  r.right(90)
+  r.forward(10)
+  r.right(180)
+  r.forward(25)
+  r.right(180)
+  r.forward(15)
+  r.left(90)
+  r.forward(20)
+  r.right(60)
+  r.forward(15)
+  r.right(180)
+  r.forward(15)
+  r.right(60)
+  r.forward(15)
+  
+def drawBoat():
+  #by Shayan Manoharan
+  r.penup()
+  r.goto(250,190)
+  r.setheading(0)
+  r.fillcolor("black")
+  r.begin_fill()
+  r.pendown()
+  r.forward(100)
+  r.right(90)
+  for i in range(180):
+    r.forward(.85)
+    r.right(1)
+  r.end_fill()  
+  r.right(90)
+  r.forward(45)
+  r.left(90)
+  r.forward(70)
+  r.right(90)
+  r.begin_fill()
+  r.fillcolor("blue")
+  for i in range(120):
+    r.right(1)
+    r.forward(.6)
+  r.right(65)
+  r.forward(30)
+  r.end_fill()
+
+def drawKite():
+  #by Shayan Manoharan
+  r.penup()
+  r.goto(-250,350)
+  r.fillcolor(randint(0,255),randint(0,255),randint(0,255))
+  r.begin_fill()
+  r.pendown()
+  r.setheading(135)
+  for i in range(4):
+    r.forward(30)
+    r.right(90)
+  r.setheading(240)
+  r.end_fill()
+  for i in range(2):
+    r.forward(10)
+    r.left(90)
+    r.forward(10)
+    r.right(90)
+ 
+def drawBalloon():
+  #by Shayan Manoharan 
+  r.penup()
+  r.goto(-150,300)
+  r.fillcolor(randint(0,255),randint(0,255),randint(0,255))
+  r.begin_fill()
+  r.pendown()
+  r.setheading(180)
+  for i in range(360):
+    r.forward(2)
+    r.right(5)
+  r.setheading(270)
+  r.end_fill()
+  r.forward(50)
+
 
 createWaves()
 drawLand()
 drawAllSeaweed()
 drawOneFish()
+drawBird()
+drawBoat()
+drawKite()
+drawBalloon()
+drawStickPerson()
+
+
+
+
 
 update()
