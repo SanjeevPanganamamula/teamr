@@ -103,9 +103,43 @@ def drawAllSeaweed(): #repeats drawoneseaweed function
         r.penup()
         r.goto(100,0)
         drawOneSeaweed()
+        
+def drawOneFish():
+    #By rishil patel
+    r.penup()
+    r.goto(300,0)
+    r.pendown()
+    colors = [randomRed(),randomGreen(),randomBlue(),randomYellow(),randomOrange(),randomPurple()]
+    r.fillcolor(choice(colors)) #random fill color
+    r.begin_fill()
+    r.left(60)
+    number = 50
+    number = number/100 #divides the number by 100 to make the fish body smaller
+    for i in range(120):
+
+        r.forward(number)
+        r.right(1)
+    r.right(60)
+    for i in range(120):
+
+        r.forward(number) #Goes to position to make the tail
+        r.right(1)
+    r.right(60)
+    for i in range(120):
+
+        r.forward(number)
+        r.right(1)
+    r.forward(30*number) #draws fish tail (makes the tail proportional to the fish body)
+    r.left(150)
+    r.forward(50*number)
+    r.left(150)
+    r.forward(30*number)
+    r.end_fill()
+    r.right(60)
 
 createWaves()
 drawLand()
 drawAllSeaweed()
+drawOneFish()
 
 update()
