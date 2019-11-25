@@ -274,6 +274,7 @@ def drawBalloon():
   r.forward(50)
 
 def drawCloud():
+  #by Shayan Manoharan
   r.penup()
   r.goto(300,300)
   r.fillcolor(255,255,255)
@@ -496,6 +497,22 @@ def drawSubmarine():
         r.right(2)
         r.forward(2)
     r.end_fill()
+    
+    
+def drawStar():
+  #by Shayan Manoharan
+  r.penup()
+  r.goto(-225,250)
+  r.fillcolor(0,0,0)
+  r.begin_fill()
+  r.pendown()
+  r.setheading(0)
+  for i in range(5):
+    r.forward(30)
+    r.left(360/5)
+    r.forward(30)
+    r.right(720/5)
+  r.end_fill()    
 
 
 createWaves()
@@ -508,7 +525,7 @@ drawKite()
 drawBalloon()
 drawStickPerson()
 drawCloud()
-
+drawStar()
 
 
 
