@@ -544,9 +544,9 @@ def drawOneRay():
     r.left(90)
     r.forward(10)
     r.end_fill()
-    
 def drawWindTurbine():
 	#by Brandon Mikesell
+    r.goto(randint(-450,450),randint(-400,400))
     r.setheading(0)
     r.fillcolor(150,150,126)
     r.begin_fill()
@@ -682,6 +682,7 @@ def tester():
     drawSubmarine()
     drawStar()
     drawSunWithRays()
+    drawWindTurbine()
 
 tester()
 update()
