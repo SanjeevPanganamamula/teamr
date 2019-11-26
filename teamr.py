@@ -513,7 +513,40 @@ def drawStar():
     r.forward(30)
     r.right(720/5)
   r.end_fill()    
-
+def drawSunWithRays():
+    #By rishil patel
+    drawCircle(400,400,100,randomYellow())
+    r.penup()
+    r.goto(280,375)
+    r.pendown()
+    r.left(120)
+    drawOneRay()
+    r.penup()
+    for i in range(25):
+        r.forward(-2)
+        r.left(0.5)
+    r.pendown()
+    r.left(90)
+    drawOneRay()
+    r.penup()
+    for i in range(25):
+        r.forward(-2)
+        r.left(0.5)
+    r.left(100)
+    r.pendown()
+    drawOneRay()
+def drawOneRay():
+    #By rishil patel
+    r.begin_fill()
+    r.fillcolor(randomYellow())
+    r.forward(50)
+    r.left(90)
+    r.forward(10)
+    r.left(90)
+    r.forward(50)
+    r.left(90)
+    r.forward(10)
+    r.end_fill()
 
 createWaves()
 drawLand()
