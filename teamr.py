@@ -68,7 +68,9 @@ def createWaves():
     r.forward(700) #go to bottom left corner
     r.left(90)
     r.forward(1200) #go to bottom right corner
-    r.goto(xcoordinate+475,ycoordinate-200) #go to top right corner
+    r.left(90)
+    r.forward(700)
+    # r.goto(xcoordinate+475,ycoordinate-200) #go to top right corner
     r.end_fill()
 
 def drawLand():
