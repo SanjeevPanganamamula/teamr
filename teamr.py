@@ -54,9 +54,10 @@ def createRipple():
         r.right(1)
 def createWaves():
     #By rishil Patel
-
+    xcoordinate = r.xcor()
+    ycoordinate = r.ycor()
     r.penup()
-    r.goto(475,200) #top right corner
+    r.goto(randint(-450,450),randint(-400,400)) #top right corner
     r.pencolor("blue")
     r.fillcolor("blue")
     r.begin_fill()
@@ -67,7 +68,7 @@ def createWaves():
     r.forward(700) #go to bottom left corner
     r.left(90)
     r.forward(1200) #go to bottom right corner
-    r.goto(475,200) #go to top right corner
+    r.goto(xcoordinate+475,ycoordinate-200) #go to top right corner
     r.end_fill()
 
 def drawLand():
@@ -117,13 +118,14 @@ def drawAllSeaweed(): #repeats drawoneseaweed function
     #By rishil patel
     for i in range(1):
         r.penup()
-        r.goto(100,0)
+        r.goto(randint(-450,450),randint(-400,400))
+        r.setheading(0)
         drawOneSeaweed()
         
 def drawOneFish():
     #By rishil patel
     r.penup()
-    r.goto(300,0)
+    r.goto(randint(-450,450),randint(-400,400))
     r.pendown()
     colors = [randomRed(),randomGreen(),randomBlue(),randomYellow(),randomOrange(),randomPurple()]
     r.fillcolor(choice(colors)) #random fill color
@@ -158,7 +160,7 @@ def drawBird():
   #by Shayan Manoharan
   r.penup()
   r.fillcolor(0,0,0)
-  r.goto(0,300)
+  r.goto(randint(-450,450),randint(-400,400))
   r.begin_fill()
   r.pencolor("black")
   r.pendown()
@@ -187,7 +189,7 @@ def drawStickPerson():
   #by sangeev p
   r.penup()
   r.setheading(0)
-  r.goto(-50,230)
+  r.goto(randint(-450,450),randint(-400,400))
   r.pencolor("black")
   r.fillcolor(0,0,0)
   r.begin_fill()
@@ -214,7 +216,7 @@ def drawStickPerson():
 def drawBoat():
   #by Shayan Manoharan
   r.penup()
-  r.goto(250,190)
+  r.goto(randint(-450,450),randint(-400,400))
   r.setheading(0)
   r.fillcolor("black")
   r.begin_fill()
@@ -242,7 +244,7 @@ def drawBoat():
 def drawKite():
   #by Shayan Manoharan
   r.penup()
-  r.goto(-250,350)
+  r.goto(randint(-450,450),randint(-400,400))
   r.fillcolor(randint(0,255),randint(0,255),randint(0,255))
   r.begin_fill()
   r.pendown()
@@ -261,7 +263,7 @@ def drawKite():
 def drawBalloon():
   #by Shayan Manoharan 
   r.penup()
-  r.goto(-150,300)
+  r.goto(randint(-450,450),randint(-400,400))
   r.fillcolor(randint(0,255),randint(0,255),randint(0,255))
   r.begin_fill()
   r.pendown()
@@ -276,7 +278,7 @@ def drawBalloon():
 def drawCloud():
   #by Shayan Manoharan
   r.penup()
-  r.goto(300,300)
+  r.goto(randint(-450,450),randint(-400,400))
   r.fillcolor(255,255,255)
   r.begin_fill()
   r.pendown()
@@ -295,6 +297,7 @@ def drawCloud():
 def drawSubmarine():
     #by Brandon Mikesell
     r.setheading(200)
+    r.goto(randint(-450,450),randint(-400,400))
     r.fillcolor("yellow")
     r.begin_fill()
     for i in range(180):
@@ -502,7 +505,7 @@ def drawSubmarine():
 def drawStar():
   #by Shayan Manoharan
   r.penup()
-  r.goto(-225,250)
+  r.goto(randint(-450,450),randint(-400,400))
   r.fillcolor(0,0,0)
   r.begin_fill()
   r.pendown()
@@ -515,26 +518,18 @@ def drawStar():
   r.end_fill()    
 def drawSunWithRays():
     #By rishil patel
-    drawCircle(400,400,100,randomYellow())
-    r.penup()
-    r.goto(280,375)
-    r.pendown()
-    r.left(120)
+    drawCircle(randint(-450,450),randint(-400,400),100,randomYellow())
+    r.right(90)
     drawOneRay()
     r.penup()
-    for i in range(25):
-        r.forward(-2)
-        r.left(0.5)
-    r.pendown()
-    r.left(90)
-    drawOneRay()
-    r.penup()
-    for i in range(25):
-        r.forward(-2)
-        r.left(0.5)
-    r.left(100)
-    r.pendown()
-    drawOneRay()
+    for i in range(3):
+        for i in range(90):
+            r.forward(2*math.pi*(100/360))
+            r.right(1)
+        r.left(90)
+        r.pendown()
+        drawOneRay()
+        r.penup()
 def drawOneRay():
     #By rishil patel
     r.begin_fill()
@@ -548,18 +543,24 @@ def drawOneRay():
     r.forward(10)
     r.end_fill()
 
-createWaves()
-drawLand()
-drawAllSeaweed()
-drawOneFish()
-drawBird()
-drawBoat()
-drawKite()
-drawBalloon()
-drawStickPerson()
-drawCloud()
-drawStar()
+def tester():
+    #By rishil patel
+    xcoordinate = r.xcor()
+    ycoordinate = r.ycor()
+    createWaves()
+    colors = [randomRed(),randomGreen(),randomBlue(),randomYellow(),randomOrange(),randomPurple()]
+    drawCircle(randint(-450,450),randint(-400,400),50,choice(colors))
+    drawAllSeaweed()
+    drawOneFish()
+    drawBird()
+    drawStickPerson()
+    drawBoat()
+    drawKite()
+    drawBalloon()
+    drawCloud()
+    drawSubmarine()
+    drawStar()
+    drawSunWithRays()
 
-
-
+tester()
 update()
