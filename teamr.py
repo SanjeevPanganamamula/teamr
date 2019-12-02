@@ -818,3 +818,28 @@ def drawBuilding():
     r.setheading(270)
     r.forward(20)
     r.end_fill()
+	
+def randomLightRed():
+    #By Shayan Manoharan
+    LightRed = (randint(0,127),0,0)
+    return LightRed
+def randomDarkRed():
+    #By Shayan Manoharan
+    DarkRed = (randint(127,255),0,0)
+    return DarkRed
+def randomLightBlue():
+    #By Shayan Manoharan
+    LightBlue = (0,(randint(0,127),0)
+    return LightBlue
+def randomDarkBlue():
+    #By Shayan Manoharan
+    DarkBlue = (0,(randint(127,255),0)
+    return DarkBlue
+def randomLightGreen():
+    #By Shayan Manoharan
+    LightGreen = (0,0,(randint(0,127))
+    return LightGreen
+def randomDarkGreen():
+    #By Shayan Manoharan
+    DarkGreen = (0,0,randint(127,255))
+    return DarkGreen
