@@ -58,8 +58,8 @@ def createWaves():
     ycoordinate = r.ycor()
     r.penup()
     r.goto(randint(-450,450),randint(-400,400)) #top right corner
-    r.pencolor("blue")
-    r.fillcolor("blue")
+    r.pencolor(randomBlue())
+    r.fillcolor(randomBlue())
     r.begin_fill()
     r.pendown()
     for i in range(4): #create 4 ripples
@@ -77,9 +77,9 @@ def drawLand():
     #By rishil Patel
     r.penup()
     r.goto(-500,200) 
-    r.pencolor("light green") #color of the land
+    r.pencolor(randomGreen()) #color of the land
     r.begin_fill()
-    r.fillcolor("light green")
+    r.fillcolor(randomGreen())
     r.pendown()
     r.right(90)
     r.forward(800) 
@@ -235,7 +235,7 @@ def drawBoat():
   r.forward(70)
   r.right(90)
   r.begin_fill()
-  r.fillcolor("blue")
+  r.fillcolor(randomBlue())
   for i in range(120):
     r.right(1)
     r.forward(.6)
@@ -789,7 +789,7 @@ def drawBuilding():
     r.setheading(90)
     r.forward(200)
     for i in range(9):
-        r.fillcolor("yellow")
+        r.fillcolor(randomYellow())
         r.pendown()
         r.begin_fill()
         r.setheading(270)
