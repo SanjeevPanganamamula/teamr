@@ -44,7 +44,7 @@ def drawCircle(centerX,centerY,radius,color):
     for i in range(360):
         r.forward(2*math.pi*(radius/360))
         r.left(1)
-    r.end_fill()   
+    r.end_fill()
 
 def createRipple():
     #By rishil Patel
@@ -58,8 +58,8 @@ def createWaves():
     ycoordinate = r.ycor()
     r.penup()
     r.goto(randint(-450,450),randint(-400,400)) #top right corner
-    r.pencolor(randomBlue())
-    r.fillcolor(randomBlue())
+    r.pencolor("blue")
+    r.fillcolor("blue")
     r.begin_fill()
     r.pendown()
     for i in range(4): #create 4 ripples
@@ -76,19 +76,19 @@ def createWaves():
 def drawLand():
     #By rishil Patel
     r.penup()
-    r.goto(-500,200) 
-    r.pencolor(randomGreen()) #color of the land
+    r.goto(-500,200)
+    r.pencolor("light green") #color of the land
     r.begin_fill()
-    r.fillcolor(randomGreen())
+    r.fillcolor("light green")
     r.pendown()
     r.right(90)
-    r.forward(800) 
+    r.forward(800)
     r.left(90)
-    r.forward(((360/math.pi)*4)+60) #goes to the wave's edge
+    r.forward(1000) #goes to the wave's edge
     r.left(90)
     r.forward(800)
     r.left(90)
-    r.forward(((360/math.pi)*4)+60) #goes to the wave's edge
+    r.forward(1000) #goes to the wave's edge
     r.end_fill() #fills half the page with the land
 def drawOneSeaweed():
     #By rishil patel
@@ -123,7 +123,7 @@ def drawAllSeaweed(): #repeats drawoneseaweed function
         r.goto(randint(-450,450),randint(-400,400))
         r.setheading(0)
         drawOneSeaweed()
-        
+
 def drawOneFish():
     #By rishil patel
     r.penup()
@@ -156,13 +156,13 @@ def drawOneFish():
     r.forward(30*number)
     r.end_fill()
     r.right(60)
-    
-    
+
+
 def drawBird():
   #by Shayan Manoharan
   r.penup()
   r.fillcolor(0,0,0)
-  r.goto(randint(-450,450),randint(-400,400))
+  r.goto(randint(-450,450),randint(200,400))
   r.begin_fill()
   r.pencolor("black")
   r.pendown()
@@ -184,14 +184,14 @@ def drawBird():
     r.left(2)
   r.penup()
   r.end_fill()
-  
-  
+
+
 
 def drawStickPerson():
   #by sangeev p
   r.penup()
   r.setheading(0)
-  r.goto(randint(-450,450),randint(-400,400))
+  r.goto(randint(-450,450),randint(-400,200))
   r.pencolor("black")
   r.fillcolor(0,0,0)
   r.begin_fill()
@@ -214,7 +214,7 @@ def drawStickPerson():
   r.forward(15)
   r.right(60)
   r.forward(15)
-  
+
 def drawBoat():
   #by Shayan Manoharan
   r.penup()
@@ -228,14 +228,14 @@ def drawBoat():
   for i in range(180):
     r.forward(.85)
     r.right(1)
-  r.end_fill()  
+  r.end_fill()
   r.right(90)
   r.forward(45)
   r.left(90)
   r.forward(70)
   r.right(90)
   r.begin_fill()
-  r.fillcolor(randomBlue())
+  r.fillcolor("blue")
   for i in range(120):
     r.right(1)
     r.forward(.6)
@@ -261,9 +261,9 @@ def drawKite():
     r.left(90)
     r.forward(10)
     r.right(90)
- 
+
 def drawBalloon():
-  #by Shayan Manoharan 
+  #by Shayan Manoharan
   r.penup()
   r.goto(randint(-450,450),randint(-400,400))
   r.fillcolor(randint(0,255),randint(0,255),randint(0,255))
@@ -502,8 +502,8 @@ def drawSubmarine():
         r.right(2)
         r.forward(2)
     r.end_fill()
-    
-    
+
+
 def drawStar():
   #by Shayan Manoharan
   r.penup()
@@ -517,10 +517,10 @@ def drawStar():
     r.left(360/5)
     r.forward(30)
     r.right(720/5)
-  r.end_fill()    
+  r.end_fill()
 def drawSunWithRays():
     #By rishil patel
-    drawCircle(randint(-450,450),randint(-400,400),100,randomYellow())
+    drawCircle(450,400,100,randomYellow())
     r.right(90)
     drawOneRay()
     r.penup()
@@ -683,30 +683,6 @@ def tester():
     drawStar()
     drawSunWithRays()
     drawWindTurbine()
-def isValidNumber(myNumber):
-    #By rishil patel
-    myNumber = int(myNumber)
-    if myNumber == 1 or myNumber == 2 or myNumber == 3:
-        return True
-    else:
-        return False
-def mainFunction():
-    #By rishil patel
-    print("Which scene would you like? Type either 1 for city, 2 for country, or 3 for underwater")
-    userInput = input()
-    isValidNumber(userInput)
-    if userInput == 1:
-        cityScene()
-    if userInput == 2:
-        countryScene()
-    if userInput == 3:
-        underwaterScene()
-    if isValidNumber(userInput) == False:
-        print("Not a valid number 1-3")
-
-tester()
-update()
-
 def randomWhite():
     #By Shayan Manoharan
     White = (randint(250,255))
@@ -789,7 +765,7 @@ def drawBuilding():
     r.setheading(90)
     r.forward(200)
     for i in range(9):
-        r.fillcolor(randomYellow())
+        r.fillcolor("yellow")
         r.pendown()
         r.begin_fill()
         r.setheading(270)
@@ -818,7 +794,6 @@ def drawBuilding():
     r.setheading(270)
     r.forward(20)
     r.end_fill()
-	
 def randomLightRed():
     #By Shayan Manoharan
     LightRed = (randint(0,127),0,0)
@@ -843,3 +818,39 @@ def randomDarkGreen():
     #By Shayan Manoharan
     DarkGreen = (0,0,randint(127,255))
     return DarkGreen
+def isValidNumber(myNumber):
+    #By rishil patel
+    myNumber = int(myNumber)
+    if myNumber == 1 or myNumber == 2 or myNumber == 3:
+        return True
+    else:
+        return False
+def countryScene():
+    #By rishil patel
+    drawLand()
+    drawBird()
+    drawSunWithRays()
+    drawStickPerson()
+def mainFunction():
+    #By rishil patel
+    print("Which scene would you like? Type either 1 for city, 2 for country, or 3 for underwater")
+    userInput = input()
+    userInput = int(userInput)
+    isValidNumber(userInput)
+    if userInput == 1:
+        cityScene()
+    if userInput == 2:
+        countryScene()
+    if userInput == 3:
+        underwaterScene()
+    if isValidNumber(userInput) == False:
+        print("Not a valid number 1-3")
+
+
+mainFunction()
+
+
+
+
+
+update()
