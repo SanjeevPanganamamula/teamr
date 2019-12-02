@@ -683,6 +683,12 @@ def tester():
     drawStar()
     drawSunWithRays()
     drawWindTurbine()
+def isValidNumber(myNumber):
+    myNumber = int(myNumber)
+    if myNumber = 1 or myNumber = 2 or myNumber = 3:
+        return True
+    else:
+        return False
 
 tester()
 update()
