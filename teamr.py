@@ -706,3 +706,24 @@ def mainFunction():
 
 tester()
 update()
+
+def randomWhite():
+    #By Shayan Manoharan
+    White = (randint(250,255))
+    return White
+def randomBlack():
+    #By Shayan Manoharan
+    Black = (randint(0,5))
+    return Black
+def randomTan():
+    #By Shayan Manoharan
+    Tan = (randint(205,210), randint(175,180),randint(135,140))
+    return Tan
+def randomBrown():
+    #By Shayan Manoharan
+    Brown = (randint(135,140), randint(65,70),randint(15,20))
+    return Brown
+def randomPink():
+    #By Shayan Manoharan
+    Pink = (randint(250,255), randint(190,195),randint(200,205))
+    return Pink
