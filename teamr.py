@@ -684,11 +684,25 @@ def tester():
     drawSunWithRays()
     drawWindTurbine()
 def isValidNumber(myNumber):
+    #By rishil patel
     myNumber = int(myNumber)
-    if myNumber = 1 or myNumber = 2 or myNumber = 3:
+    if myNumber == 1 or myNumber == 2 or myNumber == 3:
         return True
     else:
         return False
+def mainFunction():
+    #By rishil patel
+    print("Which scene would you like? Type either 1 for city, 2 for country, or 3 for underwater")
+    userInput = input()
+    isValidNumber(userInput)
+    if userInput == 1:
+        cityScene()
+    if userInput == 2:
+        countryScene()
+    if userInput == 3:
+        underwaterScene()
+    if isValidNumber(userInput) == False:
+        print("Not a valid number 1-3")
 
 tester()
 update()
